@@ -12,7 +12,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.util.Units;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import edu.wpi.first.wpilibj2.command.WaitCommand;
+import frc.robot.Constants.Constants;
 import frc.robot.commands.Vision.calibrateHood;
+import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Drivetrain.SwerveDrive;
 
@@ -74,6 +77,9 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousInit() {
     autoStartingGyro = SwerveDrive.gyro.getAngle();
+    m_robotContainer.intake.setIntake(Constants.MotorOutputMultiplier.intake.multiplier);
+    Intake.getCam().setDriverMode(false);
+    new WaitCommand(.5).schedule();
     m_autonomousCommand = m_robotContainer.getSwerveControllerPath();
 
 

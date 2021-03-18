@@ -217,8 +217,8 @@ public class RobotContainer {
         return trajectoryLookupTable.getRED_B();
       }
 
-      else if (Intake.getCam().getLatestResult().getBestTarget().getYaw() < -35
-          || Intake.getCam().getLatestResult().getBestTarget().getYaw() > -55) {
+      else if (Intake.getCam().getLatestResult().getBestTarget().getYaw() > 25
+          || Intake.getCam().getLatestResult().getBestTarget().getYaw() < 45) {
         return trajectoryLookupTable.getRED_A();
       } else {
         return null;
