@@ -8,6 +8,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 import edu.wpi.first.wpilibj.controller.PIDController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Hood extends SubsystemBase {
@@ -23,6 +24,7 @@ public class Hood extends SubsystemBase {
 
   @Override
   public void periodic() {
+    SmartDashboard.putNumber("Hood Angle", getEncoderPosition());
     // This method will be called once per scheduler run
   }
 

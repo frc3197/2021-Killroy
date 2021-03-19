@@ -18,11 +18,11 @@ public class ShooterLookupTable {
         } else if (RobotContainer.isBetween(distance, 105)) {
             return 20000;
         } else if (RobotContainer.isBetween(distance, 115)) {
-            return 21000;
+            return 22000;
         } else if (RobotContainer.isBetween(distance, 125)) {
             return 22000;
         } else if (RobotContainer.isBetween(distance, 135)) {
-            return 25000;
+            return 22000;
         } else if (RobotContainer.isBetween(distance, 145)) {
             return 25000;
         } else if (RobotContainer.isBetween(distance, 155)) {
@@ -30,7 +30,7 @@ public class ShooterLookupTable {
         } else if (RobotContainer.isBetween(distance, 165)) {
             return 28000;
         } else if (RobotContainer.isBetween(distance, 175)) {
-            return 26000;
+            return 28000;
         } else if (RobotContainer.isBetween(distance, 185)) {
             return 28000;
         } else if (RobotContainer.isBetween(distance, 195)) {
@@ -42,19 +42,19 @@ public class ShooterLookupTable {
         } else if (RobotContainer.isBetween(distance, 225)) {
             return 27400;
         } else if (RobotContainer.isBetween(distance, 235)) {
-            return 27500;
+            return 31000;
         } else if (RobotContainer.isBetween(distance, 245)) {
-            return 26500;
+            return 31000;
         } else if (RobotContainer.isBetween(distance, 255)) {
-            return 26300;
+            return 31000;
         } else if (RobotContainer.isBetween(distance, 265)) {
-            return 29000;
+            return 32000;
         } else if (RobotContainer.isBetween(distance, 275)) {
             return 28000;
         }
 
         else {
-            return 14000;
+            return 6500;
         }
 
     }
