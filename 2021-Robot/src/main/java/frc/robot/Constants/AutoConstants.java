@@ -17,7 +17,7 @@ public class AutoConstants {
 
     public static enum thetaPIDConstants{
         // .45 , 0 , .006
-        kP(2.5),kI(0.01),kD(0.3);
+        kP(1),kI(0.01),kD(0.3);
 
 
         public final double constant;

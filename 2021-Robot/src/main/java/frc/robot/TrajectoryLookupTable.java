@@ -38,25 +38,25 @@ private Trajectory galacticSearch_Blue_B2;
 private Trajectory galacticSearch_Blue_B3;
 private Trajectory galacticSearch_Blue_B4;
 
-private String galacticSearch_Red_A_JSON1 = "";
-private String galacticSearch_Red_A_JSON2 = "";
-private String galacticSearch_Red_A_JSON3 = "";
-private String galacticSearch_Red_A_JSON4 = "";
+private String galacticSearch_Red_A_JSON1 = "output/RedA1.wpilib.json";
+private String galacticSearch_Red_A_JSON2 = "output/RedA2.wpilib.json";
+private String galacticSearch_Red_A_JSON3 = "output/RedA3.wpilib.json";
+private String galacticSearch_Red_A_JSON4 = "output/RedA4.wpilib.json";
 
-private String galacticSearch_Red_B_JSON1 = "";
-private String galacticSearch_Red_B_JSON2 = "";
-private String galacticSearch_Red_B_JSON3 = "";
-private String galacticSearch_Red_B_JSON4 = "";
+private String galacticSearch_Red_B_JSON1 = "output/RedB1.wpilib.json";
+private String galacticSearch_Red_B_JSON2 = "output/RedB2.wpilib.json";
+private String galacticSearch_Red_B_JSON3 = "output/RedB3.wpilib.json";
+private String galacticSearch_Red_B_JSON4 = "output/RedB4.wpilib.json";
 
-private String galacticSearch_Blue_A_JSON1 = "";
-private String galacticSearch_Blue_A_JSON2 = "";
-private String galacticSearch_Blue_A_JSON3 = "";
-private String galacticSearch_Blue_A_JSON4 = "";
+private String galacticSearch_Blue_A_JSON1 = "output/BlueA1.wpilib.json";
+private String galacticSearch_Blue_A_JSON2 = "output/BlueA2.wpilib.json";
+private String galacticSearch_Blue_A_JSON3 = "output/BlueA3.wpilib.json";
+private String galacticSearch_Blue_A_JSON4 = "output/BlueA4.wpilib.json";
 
-private String galacticSearch_Blue_B_JSON1 = "";
-private String galacticSearch_Blue_B_JSON2 = "";
-private String galacticSearch_Blue_B_JSON3 = "";
-private String galacticSearch_Blue_B_JSON4 = "";
+private String galacticSearch_Blue_B_JSON1 = "output/BlueB1.wpilib.json";
+private String galacticSearch_Blue_B_JSON2 = "output/BlueB2.wpilib.json";
+private String galacticSearch_Blue_B_JSON3 = "output/BlueB3.wpilib.json";
+private String galacticSearch_Blue_B_JSON4 = "output/BlueB4.wpilib.json";
 
 private ProfiledPIDController profliedPID;
 

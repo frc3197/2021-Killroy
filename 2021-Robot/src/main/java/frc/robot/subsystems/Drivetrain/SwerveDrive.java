@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj2.command.Subsystem;
 public class SwerveDrive implements Subsystem {
 
     // CHANGE SPEED
-    public static double maxSpeed = Units.feetToMeters(30);
+    public static double maxSpeed = Units.feetToMeters(32.5);
 
     public static double maxAngleSpeed = 6*Math.PI;
     

@@ -190,7 +190,11 @@ public class RobotContainer {
     } else {
       SmartDashboard.putBoolean("Inside Shooting Range", false);
     }
-    return limeDistance;
+    if(NetworkTableInstance.getDefault().getTable("limelight-killroy").getEntry("tv").getBoolean(false)){
+    return limeDistance;}
+    else{
+      return 0;
+    }
     // Will have to integrate a variable a1 value once set up for limelight angle.
   }
 
@@ -212,13 +216,13 @@ public class RobotContainer {
     if (Robot.autoStartingGyro > -20 || Robot.autoStartingGyro < 20) {
 
       // Straight Ahead is RED B
-      if (Intake.getCam().getLatestResult().getBestTarget().getYaw() > -10
-          || Intake.getCam().getLatestResult().getBestTarget().getYaw() < 10) {
+      if (intake.getYaw() > -10
+          || intake.getYaw() < 10) {
         return trajectoryLookupTable.getRED_B();
       }
 
-      else if (Intake.getCam().getLatestResult().getBestTarget().getYaw() < -35
-          || Intake.getCam().getLatestResult().getBestTarget().getYaw() > -55) {
+      else if(intake.getYaw() > 25
+          ||intake.getYaw() < 45) {
         return trajectoryLookupTable.getRED_A();
       } else {
         return null;
