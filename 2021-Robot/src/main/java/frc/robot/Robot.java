@@ -130,9 +130,10 @@ public class Robot extends TimedRobot {
 
     
     RobotContainer.intake.getCam().setDriverMode(true);
-    RobotContainer.swerveDrive.ResetOdometry(new Pose2d(0,0,new Rotation2d(Units.degreesToRadians(180))));
+    RobotContainer.swerveDrive.ResetOdometry(new Pose2d(.0762, -1.524, new Rotation2d()));
     RobotContainer.swerveDrive.resetEncoders();
     RobotContainer.swerveDrive.resetGyro();
+    RobotContainer.swerveDrive.gyro.calibrate();
     RobotContainer.hood.resetEncoder();
 
     // This makes sure that the autonomous stops running when

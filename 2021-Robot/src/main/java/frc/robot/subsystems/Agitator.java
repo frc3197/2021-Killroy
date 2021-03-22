@@ -26,4 +26,7 @@ public class Agitator extends SubsystemBase {
   public void setAgitatorMotor(double speed){
     agitatorMotor.set(speed);
   }
+
+
+  
 }
