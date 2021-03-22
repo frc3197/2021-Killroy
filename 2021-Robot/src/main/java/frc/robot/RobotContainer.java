@@ -48,10 +48,12 @@ public class RobotContainer {
   private JoystickButton driver1B = new JoystickButton(driver1, 2);
   private JoystickButton driver1Start = new JoystickButton(driver1, 8);
 
+  
+  private JoystickButton driver2B = new JoystickButton(driver2, 2);
   private JoystickButton driver2RB = new JoystickButton(driver2, 6);
   private JoystickButton driver2LB = new JoystickButton(driver2, 5);
   private JoystickButton driver2X = new JoystickButton(driver2, 3);
-  private JoystickButton driver2Y = new JoystickButton(driver2, 2);
+  private JoystickButton driver2Y = new JoystickButton(driver2, 4);
   private JoystickButton driver2A = new JoystickButton(driver2, 1);
   private JoystickButton driver2Select = new JoystickButton(driver2, 7);
   private JoystickButton driver2Start = new JoystickButton(driver2, 8);
@@ -109,13 +111,13 @@ public class RobotContainer {
     driver1Y.whenReleased(new DriverModeToggle(true));
 
     driver2RB.whileHeld(new forceShoot(hopper, 1));
-    driver2LB.whileHeld(new hoodAlign(hood));
+    driver2B.whileHeld(new hoodAlign(hood));
     driver2Select.whileHeld(new shooterAlign2(shooter, swerveDrive));
 
     driver2Start.whileHeld(new forceShoot(hopper, -1));
-    driver2X.whileHeld(new moveHood(hood, -1 * Constants.MotorOutputMultiplier.hood.multiplier));
+    driver2A.whileHeld(new moveHood(hood, -1 * Constants.MotorOutputMultiplier.hood.multiplier));
     driver2Y.whileHeld(new moveHood(hood, 1 * Constants.MotorOutputMultiplier.hood.multiplier));
-    driver2A.toggleWhenPressed(new Agitate(agitator));
+    driver2X.toggleWhenPressed(new Agitate(agitator));
 
   }
 
@@ -190,7 +192,7 @@ public class RobotContainer {
     } else {
       SmartDashboard.putBoolean("Inside Shooting Range", false);
     }
-    if(NetworkTableInstance.getDefault().getTable("limelight-killroy").getEntry("tv").getBoolean(false)){
+    if((NetworkTableInstance.getDefault().getTable("limelight-killroy").getEntry("tv").getDouble(0)) == 1){
     return limeDistance;}
     else{
       return 0;

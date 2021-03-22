@@ -37,25 +37,27 @@ public class SwerveDrive implements Subsystem {
     public final SwerveModule m_backLeft;
 
     public static AHRS gyro = new AHRS(Port.kUSB);
+    
 
     private final SwerveDriveKinematics m_kinematics = new SwerveDriveKinematics(m_frontLeftLocation,
             m_frontRightLocation, m_backLeftLocation, m_backRightLocation);
 
-    private final SwerveDriveOdometry m_odometry = new SwerveDriveOdometry(m_kinematics, gyro.getRotation2d());
+    private final SwerveDriveOdometry m_odometry = new SwerveDriveOdometry(m_kinematics, new Rotation2d(-gyro.getAngle()));
 
     public SwerveDrive(SwerveModule backRight,SwerveModule backLeft,SwerveModule frontRight,SwerveModule frontLeft) {
     m_frontRight = frontRight;
     m_frontLeft = frontLeft;
     m_backRight = backRight;
     m_backLeft = backLeft;
-
+    
 
     gyro.reset();
+    
 }
 @Override
 public void periodic() {
   // This method will be called once per scheduler run
-  SmartDashboard.putNumber("gyroVal", gyro.getAngle());
+  SmartDashboard.putNumber("gyroVal", -gyro.getAngle());
   updateOdometry();
   SmartDashboard.putNumber("Pose2d X", m_odometry.getPoseMeters().getX());
   SmartDashboard.putNumber("Pose2d Y", m_odometry.getPoseMeters().getY());  

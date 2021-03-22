@@ -27,8 +27,8 @@ public class Shooter extends SubsystemBase {
     this.shooter2 = new WPI_TalonFX(shooter2);
     this.shooter3 = new WPI_TalonFX(shooter3);
 
-    alignPID = new PIDController(.0095, 0, 0.001);
-    alignPID.setTolerance(2);
+    alignPID = new PIDController(.0105, 0, 0.001);
+    alignPID.setTolerance(0);
 
     this.shooter1.configOpenloopRamp(2);
     this.shooter2.configOpenloopRamp(2);

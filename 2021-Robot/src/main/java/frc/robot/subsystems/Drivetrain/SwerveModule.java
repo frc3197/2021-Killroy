@@ -70,6 +70,10 @@ public class SwerveModule extends SubsystemBase {
 
     angle_motor.setInverted(angleInverted);
     speed_motor.setInverted(speedInverted);
+
+    angle_motor.setSensorPhase(angleInverted);
+    speed_motor.setSensorPhase(speedInverted);
+
     m_turningPIDController.setTolerance(0);
     m_drivePIDController.setTolerance(3);
     m_turningPIDController.enableContinuousInput(-Math.PI, Math.PI);
@@ -112,7 +116,7 @@ public class SwerveModule extends SubsystemBase {
   }
 
   public SwerveModuleState getState(){
-    return new SwerveModuleState(getSpeedEncoderRate(),new Rotation2d(getAngleRadians()));
+    return new SwerveModuleState(-getSpeedEncoderRate(),new Rotation2d(getAngleRadians()));
   }
 
   public SwerveModuleState optimize(
