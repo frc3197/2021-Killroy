@@ -4,6 +4,7 @@ import java.io.IOException;
 import edu.wpi.first.wpilibj.Filesystem;
 import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj.controller.ProfiledPIDController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import java.nio.file.Path;
 
@@ -243,32 +244,37 @@ SwerveControllerCommand redA1Command = createCommand(galacticSearch_Red_A1);
 SwerveControllerCommand redA2Command = createCommand(galacticSearch_Red_A2);
 SwerveControllerCommand redA3Command = createCommand(galacticSearch_Red_A3);
 SwerveControllerCommand redA4Command = createCommand(galacticSearch_Red_A4);
-
-    return new SequentialCommandGroup(redA1Command,redA2Command,redA3Command,redA4Command);
+SequentialCommandGroup redA = new SequentialCommandGroup(redA1Command,redA2Command,redA3Command,redA4Command);
+SmartDashboard.putString("RedA", "Yes");
+    return redA;
 }
 public SequentialCommandGroup getRED_B(){
     SwerveControllerCommand redB1Command = createCommand(galacticSearch_Red_B1);
     SwerveControllerCommand redB2Command = createCommand(galacticSearch_Red_B2);
     SwerveControllerCommand redB3Command = createCommand(galacticSearch_Red_B3);
     SwerveControllerCommand redB4Command = createCommand(galacticSearch_Red_B4);
-    
-        return new SequentialCommandGroup(redB1Command,redB2Command,redB3Command,redB4Command);
+    SequentialCommandGroup redB = new SequentialCommandGroup(redB1Command,redB2Command,redB3Command,redB4Command);
+    SmartDashboard.putString("RedB", "Yes");
+        return redB;
 }
 public SequentialCommandGroup getBLUE_A(){
     SwerveControllerCommand blueA1Command = createCommand(galacticSearch_Blue_A1);
     SwerveControllerCommand blueA2Command = createCommand(galacticSearch_Blue_A2);
     SwerveControllerCommand blueA3Command = createCommand(galacticSearch_Blue_A3);
     SwerveControllerCommand blueA4Command = createCommand(galacticSearch_Blue_A4);
-    
-        return new SequentialCommandGroup(blueA1Command,blueA2Command,blueA3Command,blueA4Command);
+    SequentialCommandGroup blueA = new SequentialCommandGroup(blueA1Command,blueA2Command,blueA3Command,blueA4Command);
+    SmartDashboard.putString("BlueA", "Yes");
+        return blueA;
 }
 public SequentialCommandGroup getBLUE_B(){
+
     SwerveControllerCommand blueB1Command = createCommand(galacticSearch_Blue_B1);
     SwerveControllerCommand blueB2Command = createCommand(galacticSearch_Blue_B2);
     SwerveControllerCommand blueB3Command = createCommand(galacticSearch_Blue_B3);
     SwerveControllerCommand blueB4Command = createCommand(galacticSearch_Blue_B4);
-    
-        return new SequentialCommandGroup(blueB1Command,blueB2Command,blueB3Command,blueB4Command);
+    SequentialCommandGroup blueB = new SequentialCommandGroup(blueB1Command,blueB2Command,blueB3Command,blueB4Command);
+    SmartDashboard.putString("BlueB", "Yes");
+        return blueB;
 }
 
 
