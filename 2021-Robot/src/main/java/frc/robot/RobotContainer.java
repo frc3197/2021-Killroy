@@ -111,13 +111,13 @@ public class RobotContainer {
     driver1Y.whenReleased(new DriverModeToggle(true));
 
     driver2RB.whileHeld(new forceShoot(hopper, 1));
-    driver2B.whileHeld(new hoodAlign(hood));
+    driver2LB.whileHeld(new hoodAlign(hood));
     driver2Select.whileHeld(new shooterAlign2(shooter, swerveDrive));
 
     driver2Start.whileHeld(new forceShoot(hopper, -1));
-    driver2A.whileHeld(new moveHood(hood, -1 * Constants.MotorOutputMultiplier.hood.multiplier));
-    driver2Y.whileHeld(new moveHood(hood, 1 * Constants.MotorOutputMultiplier.hood.multiplier));
-    driver2X.toggleWhenPressed(new Agitate(agitator));
+    driver2X.whileHeld(new moveHood(hood, -1 * Constants.MotorOutputMultiplier.hood.multiplier));
+    driver2B.whileHeld(new moveHood(hood, 1 * Constants.MotorOutputMultiplier.hood.multiplier));
+    driver2A.toggleWhenPressed(new Agitate(agitator));
 
   }
 
