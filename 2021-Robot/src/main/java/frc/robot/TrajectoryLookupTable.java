@@ -253,7 +253,7 @@ public SequentialCommandGroup getRED_B(){
     SwerveControllerCommand redB2Command = createCommand(galacticSearch_Red_B2);
     SwerveControllerCommand redB3Command = createCommand(galacticSearch_Red_B3);
     SwerveControllerCommand redB4Command = createCommand(galacticSearch_Red_B4);
-    SequentialCommandGroup redB = new SequentialCommandGroup(redB1Command,redB2Command,redB3Command,redB4Command);
+    SequentialCommandGroup redB = new SequentialCommandGroup(redB1Command);
     SmartDashboard.putString("RedB", "Yes");
         return redB;
 }

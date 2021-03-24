@@ -59,8 +59,8 @@ public void periodic() {
   // This method will be called once per scheduler run
   SmartDashboard.putNumber("gyroVal", -gyro.getAngle());
   updateOdometry();
-  SmartDashboard.putNumber("Pose2d X", m_odometry.getPoseMeters().getX());
-  SmartDashboard.putNumber("Pose2d Y", m_odometry.getPoseMeters().getY());  
+  SmartDashboard.putNumber("Pose2d X", getPose().getX());
+  SmartDashboard.putNumber("Pose2d Y", getPose().getY());  
 
 }
 

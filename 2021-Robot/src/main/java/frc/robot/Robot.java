@@ -131,7 +131,7 @@ public class Robot extends TimedRobot {
 
     
     RobotContainer.intake.getCam().setDriverMode(true);
-    RobotContainer.swerveDrive.ResetOdometry(new Pose2d(.0762, -1.524, new Rotation2d(Units.degreesToRadians(-90))));
+    RobotContainer.swerveDrive.ResetOdometry(new Pose2d(.0762, -1.524, new Rotation2d()));
     RobotContainer.swerveDrive.resetEncoders();
     RobotContainer.swerveDrive.resetGyro();
     RobotContainer.swerveDrive.gyro.calibrate();
