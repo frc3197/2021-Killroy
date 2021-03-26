@@ -16,8 +16,8 @@ public class Hood extends SubsystemBase {
   WPI_TalonFX hoodMotor;
   /** Creates a new Hood. */
   public Hood(int hoodMotorID) {
-    pidController = new PIDController(.031, 0.0, 0.003);
-    pidController.setTolerance(10);
+    pidController = new PIDController(.0275, 0, 0.002);
+    pidController.setTolerance(100);
     pidController.setSetpoint(0);
     hoodMotor = new WPI_TalonFX(hoodMotorID);
   }

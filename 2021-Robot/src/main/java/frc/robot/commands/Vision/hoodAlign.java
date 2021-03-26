@@ -47,6 +47,6 @@ public class hoodAlign extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return (hood.getPIDController().atSetpoint());
+    return (currentEncoderValue == targetEncoderValue);
   }
 }

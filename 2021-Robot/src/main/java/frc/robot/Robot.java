@@ -131,6 +131,7 @@ public class Robot extends TimedRobot {
 
     
     RobotContainer.intake.getCam().setDriverMode(true);
+    RobotContainer.swerveDrive.ResetOdometry(new Pose2d(.0762, -1.524, new Rotation2d()));
     RobotContainer.swerveDrive.resetEncoders();
     RobotContainer.swerveDrive.resetGyro();
     RobotContainer.swerveDrive.gyro.calibrate();
@@ -148,8 +149,6 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    
-    SmartDashboard.putBoolean("hasTargets LL", m_robotContainer.shooter.hasTargets());
     SmartDashboard.putNumber("distance", m_robotContainer.getDistanceFromTarget());
     if(Shooter.getShooterPIDController().atSetpoint()){
       m_robotContainer.getDriver2().setRumble(RumbleType.kLeftRumble, 1);

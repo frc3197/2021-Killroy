@@ -104,7 +104,7 @@ public class RobotContainer {
 
   private void configureButtonBindings() {
     driver1A.toggleWhenPressed(new runIntakeHopper(intake, hopper, 1));
-    driver1X.whileHeld(new runIntakeHopper(intake, hopper, -1));
+    driver1Start.whileHeld(new runIntakeHopper(intake, hopper, -1));
 
     driver1Y.whenPressed(new DriverModeToggle(false));
     driver1Y.whileHeld(new intakeAlign2(swerveDrive, intake));

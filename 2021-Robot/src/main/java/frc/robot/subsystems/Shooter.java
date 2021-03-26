@@ -27,8 +27,8 @@ public class Shooter extends SubsystemBase {
     this.shooter2 = new WPI_TalonFX(shooter2);
     this.shooter3 = new WPI_TalonFX(shooter3);
 
-    alignPID = new PIDController(0.017, 0, 0.00275);
-    alignPID.setTolerance(1);
+    alignPID = new PIDController(.07, 0, 0.001);
+    alignPID.setTolerance(0);
 
     this.shooter1.configOpenloopRamp(1.5);
     this.shooter2.configOpenloopRamp(1.5);
@@ -55,7 +55,7 @@ public class Shooter extends SubsystemBase {
   }
 
   public boolean hasTargets(){
-    if(NetworkTableInstance.getDefault().getTable("limelight-killroy").getEntry("tv").getDouble(0) == 1){
+    if(NetworkTableInstance.getDefault().getTable("limelight-hounds").getEntry("tv").getDouble(0) == 1){
       return true;
     }else{
       return false;
