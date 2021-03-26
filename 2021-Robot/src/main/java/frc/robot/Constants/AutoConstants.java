@@ -9,7 +9,7 @@ import frc.robot.subsystems.Drivetrain.SwerveDrive;
 
 /** Add your docs here. */
 public class AutoConstants {
-    public final static double maxSpeed = Units.feetToMeters(2);
+    public final static double maxSpeed = Units.feetToMeters(1);
     public final static double maxAcceleration = Units.feetToMeters(1);
     public final static double maxAngleSpeed = 5 * Math.PI;    
     public final static double maxAngleAcceleration = 2 * Math.PI;
