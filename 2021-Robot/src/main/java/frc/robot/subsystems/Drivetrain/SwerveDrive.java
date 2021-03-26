@@ -118,8 +118,8 @@ public void periodic() {
         return m_odometry;
     }
 
-    public void ResetOdometry(Pose2d pose){
-        m_odometry.resetPosition(pose, new Rotation2d());
+    public void ResetOdometry(Pose2d pose, Rotation2d rotation){
+        m_odometry.resetPosition(pose, rotation);
     }
 
     public void setVoltageAllMotors(double speed){
