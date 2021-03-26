@@ -17,7 +17,7 @@ public class shooterAlign2 extends CommandBase {
   double measurement;
   double output;
   /** Creates a new shooterAlign2. */
-  public shooterAlign2(Shooter shooter, SwerveDrive swerveDrive) {
+public shooterAlign2(Shooter shooter, SwerveDrive swerveDrive) {
     this.swerveDrive = swerveDrive;
     this.shooter = shooter;
     addRequirements(shooter,swerveDrive);
@@ -30,11 +30,21 @@ public class shooterAlign2 extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
+    public void execute() {
     pidController = shooter.getAlignPIDController();
     measurement = shooter.getXOffset();
-    output = pidController.calculate(measurement, 0);
-    swerveDrive.drive(0, 0, output * -.1, true);
+    if(shooter.hasTargets()){
+      output = pidController.calculate(measurement, 0);
+      swerveDrive.drive(0, 0, output * -.2, true);
+
+    }
+    else{
+      double gyroHeading= (((swerveDrive.gyro.getAngle() + (360 * 200)) % 360) - 180)  ;
+      double signOfGyro = Math.signum(gyroHeading);
+      swerveDrive.drive(0, 0, pidController.calculate(-60 * signOfGyro, 0), true);
+
+    }
+
     }
   
 
