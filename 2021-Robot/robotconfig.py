@@ -1,7 +1,7 @@
 {
     # Ports for motors
     # If doing drive test, treat this as the left side of the drivetrain
-    "motorPorts": [1],
+    "motorPorts": [10,11,12],
     # Only if you are doing drive (leave empty "[]" if not)
     "rightMotorPorts": [],
     # Class names of motor controllers used.
@@ -9,19 +9,19 @@
     # 'WPI_VictorSPX'
     # 'WPI_TalonFX'
     # If doing drive test, treat this as the left side of the drivetrain
-    "controllerTypes": ["WPI_TalonFX"],
+    "controllerTypes": ["WPI_TalonFX", "WPI_TalonFX", "WPI_TalonFX"],
     # Only if you are doing drive (leave empty "[]" if not)
     "rightControllerTypes": [],
     # Set motors to inverted or not
     # If doing drive test, treat this as the left side of the drivetrain
-    "motorsInverted": [False],
+    "motorsInverted": [True,True,True],
     # Only if you are doing drive (leave empty "[]" if not)
     "rightMotorsInverted": [],
     # Encoder edges-per-revolution (*NOT* cycles per revolution!)
     # For the CTRE Mag Encoder, use 4096 (4 * 1024 = 4096)
     "encoderEPR": 2048,
     # Gearing accounts for the gearing between the encoder and the output shaft
-    "gearing": 1,
+    "gearing": 1.8571428571428,
     # Encoder ports (leave empty "[]" if not needed)
     # Specifying encoder ports indicates you want to use Rio-side encoders
     # If doing drive test, treat this as the left side of the drivetrain
@@ -30,7 +30,7 @@
     "rightEncoderPorts": [],
     # Set to True if encoders need to be inverted
     # If doing drive test, treat this as the left side of the drivetrain
-    "encoderInverted": False,
+    "encoderInverted": True,
     # Only if you are doing drive (set to False if not needed)
     "rightEncoderInverted": False,
     # ** The following is only if you are using a gyro for the DriveTrain test**
@@ -44,6 +44,6 @@
     # "0" (Pigeon CAN ID or AnalogGyro channel),
     # "new WPI_TalonSRX(3)" (Pigeon on a Talon SRX),
     # "" (NavX using default SPI, ADXRS450 using onboard CS0, or no gyro)
-    "gyroPort": "", 
+    "gyroPort": "",
 }
 

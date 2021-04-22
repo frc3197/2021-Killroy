@@ -63,7 +63,7 @@ public final class Constants {
     }
 
     public static enum MotorOutputMultiplier {
-        lifter(.3),intake(-1),agitator(-.8),hood(.2);
+        lifter(.3),intake(-1),agitator(-.7),hood(.2);
 
         public final double multiplier;
         private MotorOutputMultiplier(double multiplier){
@@ -104,11 +104,11 @@ public final static SwerveModuleConstants backLeftConstants = new SwerveModuleCo
 
 }
 
-public static final double shooter_P = .744;
+public static final double shooter_P = 3.09;
 public static final double shooter_D = 0;
-public static final double shooter_kS = .714;
-public static final double shooter_kV = 0.0275;
-public static final double shooter_kA = 0.016;
+public static final double shooter_kS = 0.645;
+public static final double shooter_kV = 0.0556;
+public static final double shooter_kA = 0.114;
 
 
 public static final int talonEncoderResolution = 2048;

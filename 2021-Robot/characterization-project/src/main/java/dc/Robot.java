@@ -55,10 +55,10 @@ import java.util.ArrayList;
 
 public class Robot extends TimedRobot {
 
-  static private double ENCODER_EDGES_PER_REV = 4096 / 4.;
+  static private double ENCODER_EDGES_PER_REV = 2048 / 4.;
   static private int PIDIDX = 0;
-  static private int ENCODER_EPR = 4096;
-  static private double GEARING = 1;
+  static private int ENCODER_EPR = 2048;
+  static private double GEARING = 1.8571428571428;
   
   private double encoderConstant = (1 / GEARING) * (1 / ENCODER_EDGES_PER_REV);
 
@@ -119,7 +119,7 @@ public class Robot extends TimedRobot {
       // setup encoder and data collecting methods
 
       case LEFT:
-        motor.setSensorPhase(false);
+        motor.setSensorPhase(true);
         
         leftEncoderPosition = ()
           -> motor.getSelectedSensorPosition(PIDIDX) * encoderConstant;
@@ -149,8 +149,12 @@ public class Robot extends TimedRobot {
     stick = new Joystick(0);
     
     // create left motor
-    WPI_TalonFX leftMotor = setupWPI_TalonFX(1, Sides.LEFT, false);
+    WPI_TalonFX leftMotor = setupWPI_TalonFX(10, Sides.LEFT, true);
 
+    WPI_TalonFX leftFollowerID11 = setupWPI_TalonFX(11, Sides.FOLLOWER, true);
+    leftFollowerID11.follow(leftMotor);
+    WPI_TalonFX leftFollowerID12 = setupWPI_TalonFX(12, Sides.FOLLOWER, true);
+    leftFollowerID12.follow(leftMotor);
 
     rightEncoderPosition = leftEncoderPosition;
     rightEncoderRate = leftEncoderRate;

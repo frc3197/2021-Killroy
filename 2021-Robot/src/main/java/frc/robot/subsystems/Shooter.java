@@ -30,9 +30,9 @@ public class Shooter extends SubsystemBase {
     alignPID = new PIDController(0.017, 0, 0.00275);
     alignPID.setTolerance(1);
 
-    this.shooter1.configOpenloopRamp(1.5);
-    this.shooter2.configOpenloopRamp(1.5);
-    this.shooter3.configOpenloopRamp(1.5);
+    this.shooter1.configOpenloopRamp(4);
+    this.shooter2.configOpenloopRamp(4);
+    this.shooter3.configOpenloopRamp(4);
 
     this.shooter1.setInverted(true);
     this.shooter2.setInverted(true);
