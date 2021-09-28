@@ -16,7 +16,7 @@ import frc.robot.commands.Mechs.Continuous.shoot;
 
 /** Add your docs here. */
 public class Shooter extends SubsystemBase {
-  private WPI_TalonFX shooter1,shooter2,shooter3;
+  private WPI_TalonFX shooter1, shooter2, shooter3;
   private static PIDController shooterPID = new PIDController(Constants.shooter_P, 0, Constants.shooter_D);
   private PIDController alignPID;
   private SimpleMotorFeedforward shooterFF = new SimpleMotorFeedforward(Constants.shooter_kS, Constants.shooter_kV,
@@ -30,9 +30,9 @@ public class Shooter extends SubsystemBase {
     alignPID = new PIDController(.0105, 0, 0.001);
     alignPID.setTolerance(0);
 
-    this.shooter1.configOpenloopRamp(2);
-    this.shooter2.configOpenloopRamp(2);
-    this.shooter3.configOpenloopRamp(2);
+    this.shooter1.configOpenloopRamp(5);
+    this.shooter2.configOpenloopRamp(5);
+    this.shooter3.configOpenloopRamp(5);
 
     this.shooter1.setInverted(true);
     this.shooter2.setInverted(true);
@@ -54,24 +54,24 @@ public class Shooter extends SubsystemBase {
     return shooterPID;
   }
 
-  public boolean hasTargets(){
-    if(NetworkTableInstance.getDefault().getTable("limelight-hounds").getEntry("tv").getDouble(0) == 1){
+  public boolean hasTargets() {
+    if (NetworkTableInstance.getDefault().getTable("limelight-hounds").getEntry("tv").getDouble(0) == 1) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
 
-  public double getXOffset(){
+  public double getXOffset() {
     return NetworkTableInstance.getDefault().getTable("limelight-killroy").getEntry("tx").getDouble(0);
   }
 
-  public double getRPM(){
-    // Returns the Rate(Ticks Per 50MS)  * EncoderResolution / 60000
+  public double getRPM() {
+    // Returns the Rate(Ticks Per 50MS) * EncoderResolution / 60000
     return (shooter1.getSelectedSensorVelocity() * 2048) * 0.00166667 / 10;
   }
 
-  public void setAllMotorsVoltage(double input){
+  public void setAllMotorsVoltage(double input) {
     double PIDEffort = shooterPID.calculate(getRPM(), 6800);
     double FFEffort = shooterFF.calculate((getRPM() * 60));
     shooter1.setVoltage(input * (PIDEffort + FFEffort));
@@ -79,7 +79,7 @@ public class Shooter extends SubsystemBase {
     shooter3.setVoltage(input * (PIDEffort + FFEffort));
   }
 
-  public double getYOffset(){
+  public double getYOffset() {
     return NetworkTableInstance.getDefault().getTable("limelight-killroy").getEntry("ty").getDouble(0);
   }
 }
