@@ -212,7 +212,7 @@ public class RobotContainer {
     return (value - 5) <= x && x <= (value + 5);
   }
 
-  public SequentialCommandGroup getSwerveControllerPath() {
+  /*public SequentialCommandGroup getSwerveControllerPath() {
 
     // Starting RED
     if (Robot.autoStartingGyro > -20 || Robot.autoStartingGyro < 20) {
@@ -243,7 +243,7 @@ public class RobotContainer {
       return null;
     }
 
-
+*/
 
 
 
@@ -258,4 +258,4 @@ public class RobotContainer {
  * 
  * return m_autoCommand; }
  */
-}
+

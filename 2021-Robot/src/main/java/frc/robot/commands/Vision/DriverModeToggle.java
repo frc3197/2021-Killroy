@@ -20,6 +20,6 @@ public class DriverModeToggle extends InstantCommand {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    Intake.getCam().setDriverMode(on);
+    //Intake.getCam().setDriverMode(on);
   }
 }

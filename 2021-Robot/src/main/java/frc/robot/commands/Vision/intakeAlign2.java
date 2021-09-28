@@ -31,8 +31,9 @@ public class intakeAlign2 extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    /*
     pidController = intake.getPIDController();
-    boolean targetExist = Intake.getCam().getLatestResult().hasTargets();
+    boolean targetExist = Intake.getCam().hasTargets();
     measurement = intake.getYaw();
     output = pidController.calculate(measurement, 0);
 
@@ -42,6 +43,7 @@ public class intakeAlign2 extends CommandBase {
     else{
       swerve.drive(0, 0, -1, true);
     }
+    */
   }
 
   // Called once the command ends or is interrupted.

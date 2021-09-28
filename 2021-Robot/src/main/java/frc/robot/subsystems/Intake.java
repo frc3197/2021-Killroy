@@ -7,8 +7,6 @@ package frc.robot.subsystems;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-import org.photonvision.PhotonCamera;
-
 import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -18,7 +16,7 @@ public class Intake extends SubsystemBase {
 
   CANSparkMax intakeMotor;
   PIDController pidController;
-  static PhotonCamera camera = new PhotonCamera("intakeCam");
+  //static PhotonCamera camera = new PhotonCamera("intakeCam");
   
   /** Creates a new Intake. */
   public Intake(int intakeID) {
@@ -31,10 +29,10 @@ public class Intake extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
   }
-
+/*
   public static PhotonCamera getCam(){
     return camera;
-  }
+  }*/
   public PIDController getPIDController(){
     return pidController;
   }
@@ -48,11 +46,7 @@ public class Intake extends SubsystemBase {
   }
 
   public double getYaw(){
-    var result = camera.getLatestResult();
-    double output = 0;
-    if(result.hasTargets()){
-      output = result.getBestTarget().getYaw();
-    }
-    return output;
-  }
+    return 0;
+  
+}
 }
