@@ -16,7 +16,6 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Constants.Constants;
 import frc.robot.commands.Auto.DriveForward;
 import frc.robot.commands.Auto.TurnAngle;
-import frc.robot.commands.Auto.bluePathLogic;
 import frc.robot.commands.Mechs.Button.Agitate;
 import frc.robot.commands.Mechs.Button.forceShoot;
 import frc.robot.commands.Mechs.Button.moveHood;
@@ -60,7 +59,7 @@ public class RobotContainer {
 
   private JoystickButton driver1JFwdInt = new JoystickButton(thrustmaster, 1);
   private JoystickButton driver1JRevInt = new JoystickButton(thrustmaster, 5);
-  private TrajectoryLookupTable trajectoryLookupTable = new TrajectoryLookupTable(swerveDrive);
+  //private TrajectoryLookupTable trajectoryLookupTable = new TrajectoryLookupTable(swerveDrive);
 
   public static SwerveModule backLeft = new SwerveModule(Constants.TalonID.kSwerveBLAngle.id,
       Constants.TalonID.kSwerveBLSpeed.id, Constants.CANDevices.kCANCoderBL.id,
@@ -211,7 +210,7 @@ public class RobotContainer {
   public static boolean isBetween(int x, int value) {
     return (value - 5) <= x && x <= (value + 5);
   }
-
+/*
   public SequentialCommandGroup getSwerveControllerPath() {
 
     // Starting RED
@@ -252,7 +251,7 @@ public class RobotContainer {
 
 
   }
-
+*/
 /*
  * public Command getAutonomousCommand() {
  * 

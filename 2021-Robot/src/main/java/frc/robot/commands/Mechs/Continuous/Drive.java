@@ -13,7 +13,7 @@ public class Drive extends CommandBase {
   
   private final SwerveDrive m_swerve;
 
-  private boolean fieldRelative = true;
+  private boolean fieldRelative = false;
 
   private final SlewRateLimiter m_xspeedLimiter = new SlewRateLimiter(4);
   private final SlewRateLimiter m_yspeedLimiter = new SlewRateLimiter(4);

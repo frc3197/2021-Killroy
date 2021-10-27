@@ -77,13 +77,14 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
+    /*
     autoStartingGyro = SwerveDrive.gyro.getAngle();
     m_robotContainer.intake.setIntake(Constants.MotorOutputMultiplier.intake.multiplier);
     Intake.getCam().setDriverMode(false);
     Timer.delay(2);
     m_autonomousCommand = m_robotContainer.getSwerveControllerPath();
     SmartDashboard.putString("asdjlkj", m_autonomousCommand.getName());
-
+*/
 
     /*
     GALACTIC SEARCH CHOOSER
